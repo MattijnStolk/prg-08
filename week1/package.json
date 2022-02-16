@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@sashido/teachablemachine-node": "^1.2.2",
+    "@tensorflow/tfjs": "^3.13.0",
+    "express": "^4.17.2"
+  }
+}
