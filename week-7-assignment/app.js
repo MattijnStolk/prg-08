@@ -18,9 +18,6 @@ function loadData() {
     })
 }
 
-//to do, make scatterplot
-//to do, improve accuracy (ignoring car tax),  
-
 function createNeuralNetwork(data) {
     data.sort(() => Math.random() - 0.5);
     let trainData = data.slice(0, Math.floor(data.length * 0.95))
