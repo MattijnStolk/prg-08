@@ -18,6 +18,12 @@ function loadData() {
     })
 }
 
+//to do 
+//input velden in HTML
+//op submit velden uitlezen en in het model gooien
+//resultaten teruggooien
+//css opmaak
+
 function createNeuralNetwork(data) {
     data.sort(() => Math.random() - 0.5);
     let trainData = data.slice(0, Math.floor(data.length * 0.95))
@@ -29,7 +35,7 @@ function createNeuralNetwork(data) {
 
     const options = {
         task: "regression", 
-        debug: true,
+        debug: false, //!!
         layers: [
             {
               type: 'dense',
@@ -82,6 +88,8 @@ function showData(data){
 }
 
 async function finishedTraining(data) {
+    console.log('finished training')
+
     let amountCorrect = 0;
     let colums = []
     // vergelijk de prediction met het echte label
@@ -104,7 +112,7 @@ async function finishedTraining(data) {
     console.log(amountCorrect)
     console.log(colums)
     updateChart("prediction", colums);
-    let accuracy = (amountCorrect / data.length)*100;
+    let accuracy = Math.floor((amountCorrect / data.length)*100);
 
     accuracyHTML.innerHTML = 'Accuracy : ' + accuracy + '%';
 

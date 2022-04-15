@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+
+    <script defer src="app.js" type="module"></script>
+    <title>BMW price predictor</title>
+</head>
+
+<body>
+    <header>
+        <img id="bmw-logo" src="./img/bmw-logo-removebg-preview.png" alt="BWM logo">
+        <h1 id="title">How much is your bmw worth?</h1>
+    </header>
+    <div id="view"></div>
+    <div id="input-plot">
+        <div id="input-accuraccy">
+            <div id="accuracy">Accuracy : - </div>
+            <section id="inputs">
+                <div>
+                    <label for="model">Model</label>
+                    <select name="model" id="model">
+                        <option value=" 1 Series">1 Series</option>
+                        <option value=" 2 Series">2 Series</option>
+                        <option value=" 3 Series">3 Series</option>
+                        <option value=" 4 Series">4 Series</option>
+                        <option value=" 5 Series">5 Series</option>
+                        <option value=" 6 Series">6 Series</option>
+                        <option value=" 7 Series">7 Series</option>
+                        <option value=" 8 Series">8 Series</option>
+                        <option value=" i3">i3</option>
+                        <option value=" i8">i8</option>
+                        <option value=" M2">M2</option>
+                        <option value=" M3">M3</option>
+                        <option value=" M4">M4</option>
+                        <option value=" M5">M5</option>
+                        <option value=" M6">M6</option>
+                        <option value=" X1">X1</option>
+                        <option value=" X2">X2</option>
+                        <option value=" X3">X3</option>
+                        <option value=" X4">X4</option>
+                        <option value=" X5">X5</option>
+                        <option value=" X6">X6</option>
+                        <option value=" X7">X7</option>
+                        <option value=" Z3">Z3</option>
+                        <option value=" Z4">Z4</option>
+                        <option value=" Z4">Z4</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="year">Build year</label>
+                    <input type="number" name="year" id="year">
+                </div>
+                <div>
+                    <label for="transmission">Type of transmission</label>
+                    <select name="transmission" id="transmission">
+                        <option value="Manual">Manual</option>
+                        <option value="Automatic">Automatic</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mileAge">Mileage</label>
+                    <input type="number" name="mileAge" id="mileAge">
+                </div>
+                <div>
+                    <label for="fuelType">Type of fuel</label>
+                    <select name="fuelType" id="fuelType">
+                        <option value="Diesel">Diesel</option>
+                        <option value="Petrol">Petrol</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="engineSize">Engine Size</label>
+                    <input type="number" name="engineSize" id="engineSize">
+                </div>
+                <button id="submit">submit</button>
+            </section>
+            <div id="prediction-box">
+                <p id="prediction">prediction: </p>
+            </div>
+
+        </div>
+        <div id="chartbox">
+            <canvas id="myChart" width="300" height="200"></canvas>
+        </div>
+    </div>
+</body>
+
+</html>
